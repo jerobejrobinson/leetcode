@@ -3,17 +3,17 @@
  * @param {number} target
  * @return {number[]}
  */
- var twoSum = function(nums, target) {
+ const twoSum = function(nums, target) {
     let solution = false;
-    let map = new Map();
+    let hashmap = new Map();
     
     nums.every((num, index) => {
         let rn = target - num;
-        if(map.get(rn) == undefined) {
-            map.set(num, index)
+        if(hashmap.get(rn) == undefined) {
+            hashmap.set(num, index)
             return true
         } else {
-            solution = [map.get(rn), index]
+            solution = [hashmap.get(rn), index]
             return false
         }
     })
