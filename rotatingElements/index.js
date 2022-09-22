@@ -29,7 +29,9 @@ class Node {
 // Returns linked list head
 function convertArrToCirLinkedList(arr) {
     const linkedList = arr
+    // create node out of item item
     .map(item => new Node(item))
+    // add next node to current it
     .map((item, index, arr) => {
         const nIndex = index + 1
         if(item.next == null && nIndex < arr.length) {
@@ -39,6 +41,7 @@ function convertArrToCirLinkedList(arr) {
         }
         return item
     })
+    // add the previous node to node
     .map((item, index, arr) => {
         let pIndex = index - 1
         if(item.prev == null && index == 0) {
@@ -63,14 +66,14 @@ let currentNode = Head;
 
 function handlePrev(node) {
     node.removeClass('active')
+    node.prev.addClass('active')
     currentNode = node.prev
-    currentNode.addClass('active')
 }
 
 function handleNext(node) {
     node.removeClass('active')
+    node.next.addClass('active')
     currentNode = node.next
-    currentNode.addClass('active')
 }
 
 let prevBtn = document.querySelector('#Prev')
