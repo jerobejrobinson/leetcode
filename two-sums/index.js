@@ -14,6 +14,7 @@
             return true
         } else {
             solution = [map.get(rn), index]
+            return false
         }
     })
     
