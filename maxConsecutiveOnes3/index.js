@@ -2,11 +2,23 @@ function max(arr) {
     let [left, right] = [0, 1];
     let count = 0;
     while(right < arr.length) {
-        if(arr[left] == arr[right]) {
-            count++
+        // console.log(arr[left], arr[right])
+        if(arr[left] == 1) {
+            if(arr[right] == 1) {
+                
+            }
+            if(arr[right] == 0) {
+
+            }
         }
-        left++
-        right++
+        if(arr[left] == 0) {
+            if(arr[right] == 1) {
+                
+            }
+            if(arr[right] == 0) {
+
+            }
+        }
     }
     return count
 }
