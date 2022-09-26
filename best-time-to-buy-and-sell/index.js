@@ -31,4 +31,15 @@ function bestTimeToBuy(arr) {
     
 }
 
-console.log(bestTimeToBuy([2,1,2,1,0,1,2]))
+function slidingWindow(arr) {
+    let [left, right] = [0, 1];
+    while(right < arr.length) {
+        console.log(left, right)
+        if(arr[left] > arr[right]) {
+            left++;
+        }
+        right++;
+    }
+}
+// console.log(bestTimeToBuy([2,1,2,1,0,1,2]))
+slidingWindow([2,1,2,1,0,1,2])
