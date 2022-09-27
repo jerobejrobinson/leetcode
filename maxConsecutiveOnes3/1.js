@@ -7,11 +7,11 @@ function findMaxOnes(nums) {
         } else {
             count = 0;
         }
-
-        if(count > largest) largest = count
+        if(count > largest) {
+            largest = count
+        }
     }
-
     return largest
 }
 
-console.log(findMaxOnes([1,1,0,1,1,1,1]))
+console.log(findMaxOnes([1,1,0,0,0,1,1,0,1,1]))
