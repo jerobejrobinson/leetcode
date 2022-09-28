@@ -32,16 +32,20 @@ function bestTimeToBuy(arr) {
 }
 
 function slidingWindow(arr) {
-    if(arr.length == 1) {
-        return 0
+    let left = 0;
+    let right = 1;
+    let max_profit = 0;
+    while(right < arr.length) {
+        if(arr[left] < arr[right]) {
+            let profit = arr[right] - arr[left];
+
+            max_profit = Math.max(profit, max_profit);
+        } else {
+            left = right;
+        }
+        right++;
     }
-    for(let end = 1; end < arr.length + 1; end++) {
-        
-    }
-    if(profit < 0) {
-        return 0
-    }
-    return profit
+    return max_profit;
 }
 // console.log(bestTimeToBuy([2,1,2,1,0,1,2]))
 console.log(slidingWindow([2,4,1]))
