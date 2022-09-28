@@ -1,34 +1,26 @@
 // Given a binary array nums and an integer k
 // return the maximum number of consecutive 1's in the array if you can flip at most k 0's.
 function max(nums, k) {
- 
-    for(let i = 0; i < nums.length; i++) {
-        if(nums[start] = 0) {
-            countZeros = 1
+    let maxLength = 0;
+    let start = 0;
+    let count = 0;
+
+    for(let end = 0; end < nums.length; end++) {
+        if(nums[end] == 0) {
+            count++
         }
-        if(nums[start] == 1) {
-            countOnes = 2
-        }
-        if(nums[i + 1] == 1) {
-            countOnes++
-        }
-        if(nums[i + 1] == 0) {
-            countZeros++
-            if(countZeros > k) {
-                // windows 
-                console.log(`ones: ${countOnes}`,`zeros: ${countZeros - 1}`)
-                console.log(`start: ${start}`,`end: ${i + 1}`, `window: ${window}`)
-                if(window > largest) largest = window
-                window = 0;
-                start += 1
-                i = start
-                countOnes = 0
-                countZeros = 0;
+        if(count > k) {
+            if(nums[start] === 0) {
+                count--
             }
+            start++
+        }
+        if(count <= k) {
+            maxLength = Math.max(maxLength, end - start+1)
         }
     }
     
-    return largest
+    return maxLength
 }
 
 console.log(max([1,1,0,1,0,1,1,0,0,1,1,1,0], 2))
