@@ -49,3 +49,4 @@ function slidingWindow(arr) {
 }
 // console.log(bestTimeToBuy([2,1,2,1,0,1,2]))
 console.log(slidingWindow([2,4,1]))
+//test
