@@ -3,6 +3,8 @@
  *  If target exists, then return its index. Otherwise, return -1.
 
     You must write an algorithm with O(log n) runtime complexity.
+
+    URL: https://leetcode.com/problems/binary-search
  */
 
 /**
