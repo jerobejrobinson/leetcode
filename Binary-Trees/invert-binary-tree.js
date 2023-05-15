@@ -30,7 +30,7 @@ const root = new TreeNode(2, new TreeNode(3, new TreeNode(1)))
 var invertTree = function(root) {
     if(root === null) return null
 
-    if(root.left || root.right) {
+    if(root.left || root.right){
         const left = root.left
         const right = root.right
         root.left = right
