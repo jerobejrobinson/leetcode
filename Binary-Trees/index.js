@@ -10,19 +10,21 @@ function TreeNode(val, left, right) {
 // jerobe.right = new TreeNode("Derrick", new TreeNode("Phyllis"), new TreeNode("Levi"))
 
 const root1 = new TreeNode(10, new TreeNode(7, new TreeNode(3), new TreeNode(8)), new TreeNode(17, new TreeNode(11), new TreeNode(18)))
-const root2 = new TreeNode(1, new TreeNode(2), new TreeNode(3))
+const root2 = new TreeNode(1, null, new TreeNode(3))
+const root3 = new TreeNode(1, new TreeNode(4), new TreeNode(3))
 
-function searchTree(tree) {
+function searchTree(tree1, tree2) {
+   
+    if(tree1 == null && tree2 !== null) return false
+    if(tree1 !== null && tree2 == null) return false
+    if (tree1 == null && tree2 == null) return true
     
-    tree.left && searchTree(tree.left)
-    console.log(tree.val)
-    tree.right && searchTree(tree.right)
+    if(tree1.val !== tree2.val) return false
+
+    if(!searchTree(tree1.left, tree2.left)) return false
+    if(!searchTree(tree1.right, tree2.right)) return false
     
-    return tree
+    return true
 }
-// function isSameBT(r1, r2) {
 
-// }
-// console.log(root.left.val)
-
-console.log(searchTree(root1))
+console.log(searchTree(root2, root3))
