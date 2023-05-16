@@ -10,18 +10,22 @@ const nums = [3,3]
 const target = 6
 
 const twoSum = (nums, target) => {
-    let left = 0;
+    let solution = []
+    const map = new Map()
 
-    while(left < nums.length) {
-        let right = left + 1;
-        while(right < nums.length) {
-            const isEqual = ((nums[left] + nums[right]) === target)
+    nums.every((num, index) => {
+        const req = target - num
 
-            if(isEqual) return [left, right]
-            right++
+        if(map.get(req) == undefined) {
+            map.set(num, index)
+            return true
+        } else {
+            solution = [map.get(req), index]
+            return false
         }
-        left++
-    }
+    })
+
+    return solution
 }
 
 console.log(twoSum(nums, target))
